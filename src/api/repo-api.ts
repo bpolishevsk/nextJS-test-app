@@ -31,3 +31,13 @@ export const getReposWithUser = async ({ user } : { user: string } ) => {
         return [];
     }
 }
+
+export const getUser = async ({ user }: { user: string }) => {
+    try {
+        const response = await fetch(`https://api.github.com/users/${user}`);
+        const userData = await response.json();
+        return userData;
+    } catch (error) {
+        return {};
+    }
+}

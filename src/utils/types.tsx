@@ -1,5 +1,5 @@
 export type ContributorType = {
-    avatar : string,
+    avatar: string,
     name: string,
     commits: number,
     github: string
@@ -10,4 +10,9 @@ export type RepoType = {
     forked: boolean,
     stars: number,
     lastUpdated: string
+}
+
+export type UserType = {
+    name: string,
+    location: string
 }

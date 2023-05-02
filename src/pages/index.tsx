@@ -32,8 +32,6 @@ export default function Home() {
   }
 
   useEffect(() => {
-
-
     const apiTopContributors = async () => {
       let temp_contributors: ContributorType[] = [];
       if (!loading) {
@@ -59,7 +57,7 @@ export default function Home() {
         return;
       }
       setPrevPage(currPage);
-      setContributors([...contributors,...temp_contributors]);
+      setContributors([...contributors, ...temp_contributors]);
       setLoading(false);
     };
 
@@ -84,7 +82,6 @@ export default function Home() {
           <div className='flex w-full mt-[30px]'>
             <div
               className='grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-[30px]'
-
             >
               {
                 contributors.map((contributor: ContributorType, index: number) => <ContributorCard key={index} contributorItem={contributor} />)
